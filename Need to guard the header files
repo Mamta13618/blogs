@@ -1,0 +1,12 @@
+In C++ the header files are guarded with the MACROS #ifndef .
+One .h file can be included in multiple .cpp files and in this case compiler gives the following error
+error: redefinition of ‘class engine’ // Whatever we have defined<class, variable , functions etc> in the header file when included again and will give the redefinition error
+To avoid this -
+#ifndef __ENGINE_H
+#define __ENGINE_H
+class engine
+{
+    //CODE
+};
+#endif
+It defines engine only once when its not defined .
