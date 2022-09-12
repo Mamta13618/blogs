@@ -1,0 +1,14 @@
+difference between “array” and “&array” for “int array[5]” ?
+
+#include <stdio.h>
+int main()
+{
+   int no[5];
+   cout<<no<<" "<<no+1<<endl;
+   cout<<&no<<" "<<&no+1<<endl; 
+   return 0;
+}
+
+Basically, “array” is a “pointer to the first element of array” but “&array” is a “pointer to whole array of 5 int”.
+Since “array” is pointer to int, addition of 1 resulted in an address with increment of 4 (assuming int size in your machine is 4 bytes). 
+Since “&array” is pointer to array of 5 ints, addition of 1 resulted in an address with increment of 4 x 5 = 20 = 0x14.
